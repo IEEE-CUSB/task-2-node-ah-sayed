@@ -30,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             defaultValue: null
         }
-    }, {});
+    });
     User.associate = function (models) {
         // associations can be defined here
     };

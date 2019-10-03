@@ -4,15 +4,15 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
-const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
+const indexRouter = require('./src/routes/index');
+const usersRouter = require('./src/routes/users');
 
-const models = require('./models');
+const models = require('./src/models');
 
 const app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, './src/views'));
 app.set('view engine', 'jade');
 
 app.use(logger('dev'));
