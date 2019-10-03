@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "ah-sayed",
+    "password": "t7WqiXOk2oWZ436L",
+    "database": "ieee-workshops",
+    "host": "localhost",
+    "dialect": "mysql",
+    "operatorsAliases": false
+  },
+  "test": {
+    "username": "ah-sayed",
+    "password": "t7WqiXOk2oWZ436L",
+    "database": "ieee-workshops",
+    "host": "localhost",
+    "dialect": "mysql",
+    "operatorsAliases": false
+  },
+  "production": {
+    "username": "ah-sayed",
+    "password": "t7WqiXOk2oWZ436L",
+    "database": "ieee-workshops",
+    "host": "localhost",
+    "dialect": "mysql",
+    "operatorsAliases": false
+  }
+}
