@@ -21,10 +21,15 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.all('*', (req, res, next) => {
+    if(req.secure) return next();
+    else res.redirect(307, 'https://' + req.hostname + ':' + app.get('secPort') + req.url);
+});
+
 models.sequelize.sync().then(() => {
-    console.log('Connected to ieee-workshops Database')
+    console.log('Connected to ieee-workshops MySQL Database.')
 }).catch((err) => {
-    console.log(err, 'Somtheing went wrong with the Databse Update.')
+    console.log('Somtheing went wrong with the Databse.')
 })
 
 app.use('/', indexRouter);
