@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-const googleSheet = require('../../api_google');
+const googleService = require('../services/api_google');
+const mailService = require('../services/sendMail');
 const userCtr = require('../controllers').user;
 
 router.route('/users')
@@ -25,7 +26,8 @@ router.route('/user')
     .then(user => {
         res.statusCode = 200;
         res.setHeader('Content-Type','application/json');
-        googleSheet.sendUser(user);
+        googleService.sendUser(user);
+        mailService.sendMail(user);
         res.json(user);
     }, err => next(err))
     .catch(err => {
